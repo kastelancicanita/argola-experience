@@ -33,8 +33,12 @@ body{font-family:'DM Sans',sans-serif;color:#1a1a2e;background:var(--light);over
 .quick-label{text-align:center;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--aqua);margin-bottom:16px;font-weight:600;}
 .quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:480px;margin:0 auto;}
 .quick-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(43,188,212,.2);border-radius:14px;padding:18px 12px;text-decoration:none;color:white;transition:all .2s;}
+.quick-card-featured{grid-column:1/-1;background:linear-gradient(135deg,rgba(43,188,212,.28),rgba(43,188,212,.1));border:2px solid var(--aqua);padding:22px 16px;gap:8px;box-shadow:0 8px 24px rgba(43,188,212,.15);}
+.quick-card-featured .qcl{font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,7vw,32px);letter-spacing:2.5px;line-height:1;}
+.quick-card-featured:hover{background:linear-gradient(135deg,rgba(43,188,212,.38),rgba(43,188,212,.16));transform:translateY(-3px);}
 .quick-card:hover{background:rgba(43,188,212,.15);border-color:var(--aqua);transform:translateY(-2px);}
 .qcl{font-size:12px;font-weight:700;letter-spacing:1.2px;text-align:center;text-transform:uppercase;line-height:1.3;}
+.qcl-sub{font-size:12px;font-weight:400;letter-spacing:.2px;text-transform:none;color:rgba(255,255,255,.85);line-height:1.45;text-align:center;max-width:320px;}
 .sec{padding:60px 20px;max-width:560px;margin:0 auto;}
 .stag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--aqua);margin-bottom:8px;}
 .stitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,9vw,52px);line-height:1;color:var(--navy);margin-bottom:6px;letter-spacing:1px;}
@@ -73,7 +77,6 @@ footer{background:#06101f;text-align:center;padding:36px 20px;}
 footer p{font-size:12px;color:rgba(255,255,255,.3);line-height:1.7;}
 footer a{color:rgba(43,188,212,.6);text-decoration:none;}
 #jetski,#safari,#konoba{scroll-margin-top:70px;}
-@media(min-width:560px){.quick-grid{grid-template-columns:repeat(3,1fr);}}
 </style>
 </head>
 <body>
@@ -109,7 +112,10 @@ footer a{color:rgba(43,188,212,.6);text-decoration:none;}
 <div class="quick">
   <p class="quick-label" data-en="WHAT ARE YOU LOOKING FOR?" data-hr="&#352;TO TRA&#381;I&#352;?">WHAT ARE YOU LOOKING FOR?</p>
   <div class="quick-grid">
-    <a href="#jetski" class="quick-card" onclick="smoothTo(event,'jetski')"><span class="qcl" data-en="RENT JET SKI" data-hr="IZNAJMI JET SKI">RENT JET SKI</span></a>
+    <a href="#jetski" class="quick-card quick-card-featured" onclick="smoothTo(event,'jetski')">
+      <span class="qcl" data-en="RENT JET SKI" data-hr="IZNAJMI JET SKI">RENT JET SKI</span>
+      <span class="qcl-sub" data-en="Self-drive on the sea &mdash; flexible durations: 15, 20, 30, 40 or 60 min" data-hr="Slobodna vo&#382;nja &mdash; fleksibilno trajanje: 15, 20, 30, 40 ili 60 min">Self-drive on the sea &mdash; flexible durations: 15, 20, 30, 40 or 60 min</span>
+    </a>
     <a href="#safari" class="quick-card" onclick="smoothTo(event,'safari')"><span class="qcl" data-en="SAFARI TOUR" data-hr="SAFARI TURA">SAFARI TOUR</span></a>
     <a href="#konoba" class="quick-card" onclick="smoothTo(event,'konoba')"><span class="qcl" data-en="TAVERN ARGOLA" data-hr="KONOBA ARGOLA">TAVERN ARGOLA</span></a>
   </div>
@@ -156,9 +162,11 @@ footer a{color:rgba(43,188,212,.6);text-decoration:none;}
     <div class="vwrap">
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; margin: 20px 0; background: #000;">
   <iframe 
-    src="https://www.youtube.com/embed/MyI_6mrVuo8" 
+    src="https://www.youtube.com/embed/MyI_6mrVuo8?rel=0" 
+    title="Argola Safari Tour"
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen>
   </iframe>
 </div>
